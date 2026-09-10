@@ -7,7 +7,8 @@ export default function GameView({ kategori }) {
     const [bot, setBot]     = useState(null)
     const [life, setLife]   = useState(7)
     const [guessedLetter, setGuessedLetter] = useState([])
-
+    const API_URL = import.meta.env.VITE_API_URL
+    
     const alphabet = [
     'a', 'b', 'c', 'd', 'e', 'f', 'g',
     'h', 'i', 'j', 'k', 'l', 'm', 'n',
@@ -16,7 +17,9 @@ export default function GameView({ kategori }) {
     ];
 
     useEffect (() => {
-        fetch(`http://localhost:3000/hangman/${kategori}`).then(res => res.json()).then(data => {setData(data)})
+        fetch(`${API_URL}/hangman/${kategori}`)
+        .then(res => res.json())
+        .then(data => {setData(data)})
     },[kategori])
 
     useEffect(() => {

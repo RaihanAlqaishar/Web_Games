@@ -6,7 +6,7 @@ const router = express.Router()
 router.get('/', async (req,res) => {
     try{
         const data = await game.find({}, 'kategori')
-        const kategori = await data.map(item => item.kategori)
+        const kategori = data.map(item => item.kategori)
         res.json(kategori)
     } catch(err){
         console.log(err)

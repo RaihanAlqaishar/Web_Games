@@ -6,8 +6,10 @@ export default function KategoriView() {
     const [kategori, setKategori] = useState([])
     const navigate = useNavigate()
 
+    const API_URL = import.meta.env.VITE_API_URL
+
     useEffect(() => {
-        fetch('http://localhost:3000/hangman')
+        fetch(`${API_URL}/hangman`)
             .then(res => res.json())
             .then(data => setKategori(data))
             .catch(error => console.error(error))
