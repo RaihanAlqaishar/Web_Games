@@ -16,6 +16,9 @@ mongoose.connect(mongoString)
 app.use('/hangman', hangmanRoutes)
 app.use('/catur', caturRoutes)
 
+app.get('/', (req, res) => {
+    res.send('Backend Web Games berhasil jalan')
+})
     
 export default app
 
