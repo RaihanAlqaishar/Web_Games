@@ -2,7 +2,6 @@ import {useState, useEffect} from 'react'
 import Swal from 'sweetalert2'
 import {useNavigate} from 'react-router-dom'
 
-const navigate = useNavigate()
 
 export default function GameView({ kategori }) {
     
@@ -11,6 +10,7 @@ export default function GameView({ kategori }) {
     const [life, setLife]   = useState(7)
     const [guessedLetter, setGuessedLetter] = useState([])
     const API_URL = import.meta.env.VITE_API_URL
+    const navigate = useNavigate()
     
     const alphabet = [
     'a', 'b', 'c', 'd', 'e', 'f', 'g',
