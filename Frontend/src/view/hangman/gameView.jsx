@@ -31,14 +31,14 @@ export default function GameView({ kategori }) {
 
     useEffect(() => {
         if(life === 0) {
-            Swal.fire(`kamu kalah jawabnya adalah ${bot}`).then(() => window.location.reload());
+            Swal.fire(`kamu kalah jawabnya adalah ${bot}`).then(() => navigate('/hangman'));
         }
     }, [life])
 
 
     useEffect(() => {
         if (bot && bot.split('').every((huruf) => guessedLetter.includes(huruf))) {
-            Swal.fire(`kamu menang selamat 🎉🎉`).then(() => window.location.reload());
+            Swal.fire(`kamu menang selamat 🎉🎉`).then(() => navigate('/hangman'));
         }
     })
 
