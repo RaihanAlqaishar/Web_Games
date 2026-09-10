@@ -1,5 +1,8 @@
 import {useState, useEffect} from 'react'
 import Swal from 'sweetalert2'
+import {navigate} from 'react-router-dom'
+
+const navigate = useNavigate()
 
 export default function GameView({ kategori }) {
     
